@@ -1,0 +1,188 @@
+@font-face {
+    font-family: inter;
+    src: url(fonts/Inter-VariableFont_opsz\,wght.ttf);
+    font-family: roboto-slab;
+    src: url(fonts/RobotoSlab-VariableFont_wght.ttf);
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+:root{
+    scroll-behavior:smooth;
+}
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+html, body{
+    margin: 0 auto;
+    padding: 0;
+}
+.slider{
+    overflow-x: clip;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 2000px;
+    background-color: #000000;
+    justify-content: center;
+}
+.slider .circle{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+}
+.slider .circle .inner_circle{
+    overflow: hidden;
+    position: sticky;
+    display: flex;
+    width: 200px;
+    height: 200px;
+    top: 50vh;
+    transform-origin: center;
+    background-color: #ff6600;
+    border-radius: 50%;
+    animation: scroll-scale;
+    animation-timeline: view();
+}
+@keyframes scroll-scale {
+    0%, 30%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(15);
+    }
+}
+.slider .img_container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.slider .img_container .img{
+    position: sticky;
+    margin-top: 100px;
+    top: 100px;
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/me-banner.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slider .hero_text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.slider .hero_text .container{
+    position: sticky;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    max-width: 100%;
+    height: 100vh;
+    top: 0;
+    grid-template-areas: 
+    "text1 text2"
+    "text3 text4"
+    ;
+    @media (max-width: 768px) {
+        grid-template-rows: 400px 400px;
+    }
+}
+.slider .hero_text .container .text:nth-child(1){
+    grid-area: text1;
+    text-align: center;
+}
+.slider .hero_text .container .text:nth-child(2){
+    grid-area: text2;
+    text-align: center;
+}
+.slider .hero_text .container .text:nth-child(3){
+    grid-area: text3;
+    text-align: left;
+}
+.slider .hero_text .container .text:nth-child(4){
+    grid-area: text4;
+    text-align: right;
+}
+.slider .hero_text .container h1{
+    color: #ff6600;
+    margin: 0;
+    padding: 2rem;
+    font-size: 3rem;
+    font-weight: 200;
+    font-family: roboto-slab;
+}
+.slider .hero_text .container h2{
+    color: #000000;
+    margin: 0;
+    padding: 2rem;
+    font-size: 3rem;
+    font-weight: 200;
+    font-family: roboto-slab;
+}
+.content_container{
+    overflow-x: clip;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 300vh;
+    background-color: #ffffff;
+}
+.content_container .side_scroller{
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 10vh;
+    margin-top: 10vh;
+    transform: translateX(-50%);
+    min-width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background-color: #ff6600;
+    transform-origin: left;
+    animation: scroll-rotate;
+    animation-timeline: view();
+}
+@keyframes scroll-rotate {
+    0%, 30%{
+        transform: rotate(0deg) translateX(-50%);
+    }
+    100%{
+        transform: rotate(296deg) translateX(-50%);
+    }
+}
+.content_container .side_scroller ul{
+    position: absolute;
+    margin: 0;
+    padding: 20px;
+    text-align: end;
+    width: 100%;
+    font-size: 2rem;
+    font-family: roboto-slab;
+    transform-origin: center;
+}
+.content_container .side_scroller ul:nth-child(1){
+    transform: rotate(0deg);
+}
+.content_container .side_scroller ul:nth-child(2){
+    transform: rotate(90deg);
+}
+.content_container .side_scroller ul:nth-child(3){
+    transform: rotate(180deg);
+}
+.content_container .side_scroller ul:nth-child(4){
+    transform: rotate(270deg);
+}
+.content_container .content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.content_container .content .cards{
+    
+}
