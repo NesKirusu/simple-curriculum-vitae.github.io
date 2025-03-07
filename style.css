@@ -270,5 +270,5 @@ body{
     height: 100%;
 }
 .content_container .content .cards{
-    
+    position: absolute;
 }
