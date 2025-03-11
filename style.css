@@ -24,15 +24,18 @@ body{
 }
 .progress_bar{
     position: absolute;
-    width: 100%;
+    width: 200px;
     height: 100%;
+    display: flex;
+    right: 0;
 }
 .progress_bar h1{
     margin: 0;
     position: sticky;
+    display: flex;
     top: 0;
     width: 100%;
-    height: 100vh;
+    height: 100px;
     color: #ffffff;
     background-color: transparent;
     z-index: 999;
@@ -41,7 +44,7 @@ body{
 }
 @keyframes scroll-bar {
     0%{
-        padding-top: 0px;
+        padding-top: 40vh;
     }
     100%{
         padding-top: 90vh;
@@ -121,18 +124,22 @@ body{
     }
 }
 .slider .hero_text .container .text:nth-child(1){
+    margin-top: 100px;
     grid-area: text1;
     text-align: center;
 }
 .slider .hero_text .container .text:nth-child(2){
+    margin-top: 100px;
     grid-area: text2;
     text-align: center;
 }
 .slider .hero_text .container .text:nth-child(3){
+    margin-left: 100px;
     grid-area: text3;
     text-align: left;
 }
 .slider .hero_text .container .text:nth-child(4){
+    margin-right: 100px;
     grid-area: text4;
     text-align: right;
 }
@@ -160,6 +167,10 @@ body{
     width: 100%;
     height: 400vh;
     background-color: #000000;
+    @media (max-width: 768px) {
+        grid-template-columns: none;
+        grid-template-rows: auto 1fr;
+    }
 }
 .content_container .side_scroller{
     grid-column: 1;
