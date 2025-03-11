@@ -7,9 +7,11 @@
 </head>
 <body>
     <div class="progress_bar">
-        <h1>PROGRESS</h1>
+        <div class="outer_bar">
+            <div class="bar"></div>
+        </div>
     </div>
-    <div class="slider">
+    <div class="slider" id="hero">
         <div class="circle">
             <div class="inner_circle"></div>
         </div>
@@ -22,10 +24,10 @@
                     <h1>KEVIN</h1>
                 </div>
                 <div class="text">
-                    <h1>IT - 1D</h1>
+                    <h1>BARRETTO</h1>
                 </div>
                 <div class="text">
-                    <h2>WEB DEVELOPER</h2>
+                    <h2>WEB <br> DEVELOPER</h2>
                 </div>
                 <div class="text">
                     <h2>GYM GOER</h2>
@@ -38,31 +40,54 @@
             <ul>CONTACT<br>INFORMATION</ul>
             <ul>SUMMARY</ul>
             <ul>EDUCATION</ul>
-            <ul>SKILLS</ul>
+            <ul>SUMMARY</ul>
         </div>
         <div class="arrow"></div>
         <div class="content">
             <div class="card">
+                <div class="left_span">
+                    <span>FullName:</span>
+                    <span>Address:</span>
+                    <span>Phone Number:</span>
+                    <span>Email:</span>
+                </div>
+                <div class="right_span">
+                    <span>Christian Kevin A. Barretto</span>
+                    <span>Metro Manila, Navotas City</span>
+                    <span>+09770328683</span>
+                    <span>KevinBusiness@gmail.com</span>
+                </div>
+            </div>
+            <div class="card" id="summary">
                 <p>
-                    Laboris pariatur id officia eu culpa. Et non nisi quis ut et sunt commodo voluptate ipsum ex sit ut. Incididunt ut aliquip laboris aute magna pariatur nisi deserunt laboris nisi deserunt sunt. Dolor exercitation irure esse voluptate non magna laboris. Minim pariatur proident nulla minim nostrud laboris minim incididunt Lorem nulla ullamco.
+                    "Aspiring web developer striving for a greater future in web desgining and innovation."  
                 </p>
             </div>
-            <div class="card">
-                <p>
-                    Dolore reprehenderit quis et culpa. Anim consequat non consequat ullamco eiusmod occaecat id id mollit exercitation exercitation ut. Qui ullamco irure ea nisi elit sunt cillum. Aute irure sunt quis elit nostrud non ad cupidatat ipsum non aliquip nisi. Deserunt Lorem ea fugiat ex ea. Veniam in officia ex adipisicing sint. Duis fugiat ea esse velit amet aute labore sunt commodo adipisicing.
-                </p>
+            <div class="card" id="education">
+                <h1>Education:</h1>
+                <div class="education">
+                    <h2>University Of The East</h2>
+                    <ul>Caloocan City</ul>
+                    <div class="img_preview"></div>
+                </div>
+                <div class="education">
+                    <h2>St. James Academy</h2>
+                    <ul>Malabon City</ul>
+                    <div class="img_preview"></div>
+                </div>
             </div>
-            <div class="card">
-                <p>
-                    Elit nisi fugiat magna anim magna ad sunt sint dolore.
-                </p>
-            </div>
-            <div class="card">
+            <div class="card" id="skills">
                 <p>
                     Deserunt ullamco amet sunt occaecat irure consectetur. Elit nisi fugiat magna anim magna ad sunt sint dolore.
                 </p>
             </div>
         </div>
+    </div>
+    <div class="footer">
+        <a href="#hero">[Home]</a>
+        <a href="#contact">[Contact Information]</a>
+        <a href="#education">[Education]</a>
+        <a href="#skills">[Skills]</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>

@@ -24,23 +24,39 @@ body{
 }
 .progress_bar{
     position: absolute;
-    width: 200px;
+    width: 50px;
     height: 100%;
     display: flex;
     right: 0;
+    margin-right: 100px;
+    padding-bottom: auto;
+    border: 2px solid #ff6600;
+    z-index: 1;
 }
-.progress_bar h1{
+.progress_bar .outer_bar{
+    width: 100%;
+    border: 2px solid #000000;
+}
+.progress_bar .outer_bar .bar{
     margin: 0;
     position: sticky;
     display: flex;
-    top: 0;
+    top: 0vh;
+    bottom: 20vh;
     width: 100%;
-    height: 100px;
+    height: 10vh;
     color: #ffffff;
     background-color: transparent;
-    z-index: 999;
-    animation: scroll-bar forwards;
+    border-bottom: 5px solid #ff6600;
+    z-index: 1;
+    animation: scroll-bar both;
     animation-timeline: view();
+}
+.progress_bar .outer_bar .bar::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #000000;
 }
 @keyframes scroll-bar {
     0%{
@@ -147,17 +163,18 @@ body{
     color: #ff6600;
     margin: 0;
     padding: 2rem;
-    font-size: 3rem;
+    font-size: 8rem;
     font-weight: 200;
-    font-family: roboto-slab;
+    font-family: inter;
 }
 .slider .hero_text .container h2{
     color: #000000;
     margin: 0;
     padding: 2rem;
-    font-size: 3rem;
+    font-size: 5rem;
+    text-wrap-style: balance;
     font-weight: 200;
-    font-family: roboto-slab;
+    font-family: inter;
 }
 .content_container{
     overflow-x: clip;
@@ -166,6 +183,7 @@ body{
     grid-template-columns: auto 1fr;
     width: 100%;
     height: 400vh;
+    padding-bottom: 10vh;
     background-color: #000000;
     @media (max-width: 768px) {
         grid-template-columns: none;
@@ -214,7 +232,8 @@ body{
     text-align: end;
     width: 100%;
     font-size: 2rem;
-    font-family: roboto-slab;
+    font-family: inter;
+    font-weight: 400;
     transform-origin: center;
 }
 .content_container .side_scroller ul:nth-child(1){
@@ -278,40 +297,136 @@ body{
 .content_container .content{
     overflow-y: clip;
     position: sticky;
-    top: 5vh;
+    top: 10vh;
     padding-top: 10vh;
     margin-top: 5vh;
     width: 100%;
     height: 90vh;
+    z-index: 2;
 }
 .content_container .content .card{
     position: absolute;
     width: 100%;
-    padding: 1rem;
     height: 50vh;
-    background-color: black;
+    background-color: #000000;
 }
-.content_container .content .card p{
+.content_container .content .card:nth-child(1) .left_span{
     color: #ffffff;
     font-family: roboto-slab;
     font-size: 2rem;
     text-align: centers;
+    display: flex;
+    height: 100%;
+    padding: 1rem;
+    row-gap: 30px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ff66003d;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.content_container .content .card:nth-child(1) .right_span{
+    color: #ffffff;
+    font-family: inter;
+    font-size: 2rem;
+    text-align: centers;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    row-gap: 30px;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ff6600;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .content_container .content .card:nth-child(1){
     animation: scroll-scale1 forwards;
     animation-timeline: view();
+    transform-origin: right;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    place-items: center;
 }
 .content_container .content .card:nth-child(2){
     animation: scroll-scale2 forwards;
     animation-timeline: view();
+    transform-origin: right;
+    display: flex;
+}
+.content_container .content .card:nth-child(2) p{
+    color: #ffffff;
+    font-family: inter;
+    padding: 0;
+    margin: 0 auto;
+    height: 100%;
+    font-size: 2rem;
+    display: flex;
+    text-wrap: wrap;
+    text-wrap-style: pretty;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff66003d;
 }
 .content_container .content .card:nth-child(3){
     animation: scroll-scale3 forwards;
     animation-timeline: view();
+    transform-origin: right;
+    background-color: #000000;
+    display: grid;
+    grid-template-rows: auto 1fr 1fr;
+}
+.content_container .content .card:nth-child(3) h1{
+    color: #ffffff;
+    font-family: roboto-slab;
+    padding: 2rem;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #ff6600;
+}
+.content_container .content .card:nth-child(3) h2{
+    color: #ffffff;
+    font-family: roboto-slab;
+    padding: 1rem;
+    margin: 0 auto;
+    width: 100%;
+}
+.content_container .content .card:nth-child(3) .education{
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    font-family: roboto-slab;
+    background-color: #ff66003d;
+}
+.content_container .content .card:nth-child(3) .education h1{
+    color: #ffffff;
+    font-family: roboto-slab;
+}
+.content_container .content .card:nth-child(3) .education h1:hover, .content_container .content .card:nth-child(3) .education .img_preview{
+    opacity: 1;
+    z-index: 1;
+}
+.content_container .content .card:nth-child(3) .education ul{
+
+}
+.content_container .content .card:nth-child(3) .education .img_preview{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translate(-20%, 0%);
+    background-color: red;
+    transition: 1s ease-in-out;
+    z-index: -1;
 }
 .content_container .content .card:nth-child(4){
     animation: scroll-scale4 forwards;
     animation-timeline: view();
+    transform-origin: right;
 }
 @keyframes scroll-scale1{
     0%{
@@ -341,9 +456,13 @@ body{
     0%, 75%{
         transform: scale(0);
     }
-    85%, 100%{
+    83%, 100%{
         transform: scale(1);
     }
+}
+.footer{
+    width: 100vw;
+    height: 30vh;
 }
 
 
