@@ -1,8 +1,6 @@
 @font-face {
     font-family: inter;
     src: url(fonts/Inter-VariableFont_opsz\,wght.ttf);
-    font-family: roboto-slab;
-    src: url(fonts/RobotoSlab-VariableFont_wght.ttf);
 }
 ::-webkit-scrollbar{
     width: 0;
@@ -359,12 +357,10 @@ body{
 .content_container .content .card:nth-child(2) p{
     color: #ffffff;
     font-family: inter;
-    padding: 0;
     margin: 0 auto;
     height: 100%;
     font-size: 2rem;
     display: flex;
-    text-wrap: wrap;
     text-wrap-style: pretty;
     padding: 2rem;
     justify-content: center;
@@ -381,7 +377,7 @@ body{
 }
 .content_container .content .card:nth-child(3) h1{
     color: #ffffff;
-    font-family: roboto-slab;
+    font-family: inter;
     padding: 2rem;
     margin: 0 auto;
     width: 100%;
@@ -389,7 +385,7 @@ body{
 }
 .content_container .content .card:nth-child(3) h2{
     color: #ffffff;
-    font-family: roboto-slab;
+    font-family: inter;
     padding: 1rem;
     margin: 0 auto;
     width: 100%;
@@ -398,35 +394,58 @@ body{
     display: flex;
     flex-direction: column;
     color: #ffffff;
-    font-family: roboto-slab;
+    font-family: inter;
     background-color: #ff66003d;
 }
 .content_container .content .card:nth-child(3) .education h1{
     color: #ffffff;
-    font-family: roboto-slab;
+    font-family: inter;
 }
 .content_container .content .card:nth-child(3) .education h1:hover, .content_container .content .card:nth-child(3) .education .img_preview{
     opacity: 1;
     z-index: 1;
 }
 .content_container .content .card:nth-child(3) .education ul{
-
-}
-.content_container .content .card:nth-child(3) .education .img_preview{
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transform: translate(-20%, 0%);
-    background-color: red;
-    transition: 1s ease-in-out;
-    z-index: -1;
+    color: #ffffff;
+    font-family: inter;
+    font-size: 2rem;
 }
 .content_container .content .card:nth-child(4){
     animation: scroll-scale4 forwards;
     animation-timeline: view();
     transform-origin: right;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 100%;
+    background-color: #000000;
+}
+.content_container .content .card:nth-child(4) .skills{
+    color: #ffffff;
+    font-family: inter;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #ff6600;
+}
+.content_container .content .card:nth-child(4) .skills h1{
+    width: 100%;
+}
+.content_container .content .card:nth-child(4) .box{
+    color: #ffffff;
+    font-family: inter;
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding: 2rem;
+    background-color: #ff66003d;
+}
+.content_container .content .card:nth-child(4) .box ul{
+    background-color: #ff6600;
+    padding: 1rem;
+    font-size: 1rem;
+    height: 3rem;
+    border-radius: 20px;
 }
 @keyframes scroll-scale1{
     0%{
