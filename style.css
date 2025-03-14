@@ -229,7 +229,7 @@ body{
     padding: 20px;
     text-align: end;
     width: 100%;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: inter;
     font-weight: 400;
     transform-origin: center;
@@ -450,38 +450,86 @@ body{
 @keyframes scroll-scale1{
     0%{
         transform: scale(0);
+        opacity: 0;
+        filter: blur(20px);
     }
     30%, 100%{
         transform: scale(1);
+        opacity: 1;
+        filter: blur(0px);
     }
 }
 @keyframes scroll-scale2{
     0%,30%{
         transform: scale(0);
+        opacity: 0;
+        filter: blur(20px);
     }
     50%, 100%{
         transform: scale(1);
+        opacity: 1;
+        filter: blur(0px);
     }
 }
 @keyframes scroll-scale3{
     0%, 50%{
         transform: scale(0);
+        opacity: 0;
+        filter: blur(20px);
     }
     70%, 100%{
         transform: scale(1);
+        opacity: 1;
+        filter: blur(0px);
     }
 }
 @keyframes scroll-scale4{
     0%, 75%{
         transform: scale(0);
+        opacity: 0;
+        filter: blur(20px);
     }
     83%, 100%{
         transform: scale(1);
+        opacity: 1;
+        filter: blur(0px);
     }
 }
 .footer{
     width: 100vw;
     height: 30vh;
+    padding: 0;
+    margin: 0;
+}
+.footer .infintie_slider{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: var(--height);
+    background-color: #ff6600;
+}
+.footer .infintie_slider h1{
+    --duration: 10s;
+    position: absolute;
+    text-wrap: nowrap;
+    display: flex;
+    text-align: center;
+    left: 100%;
+    width: var(--width);
+    animation: infinite_scroll var(--duration) var(--position) linear infinite;
+}
+@keyframes infinite_scroll{
+    from{
+        left: 100%;
+    }
+    to{
+        left: calc(var(--width)*-1);
+    }
+}
+@starting-style{
+    .footer .infintie_slider h1{
+        left: calc(var(--width)*-1);
+    }
 }
 
 
