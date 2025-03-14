@@ -497,7 +497,7 @@ body{
 }
 .footer{
     width: 100vw;
-    height: 30vh;
+    height: 40vh;
     padding: 0;
     margin: 0;
 }
@@ -516,18 +516,32 @@ body{
     text-align: center;
     left: 100%;
     width: var(--width);
-    animation: infinite_scroll var(--duration) var(--position) linear infinite;
+    height: var(--height);
+    animation: infinite_scroll;
+    animation-duration: var(--duration);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.footer .infintie_slider h1:nth-child(1){
+    animation-delay: 1s;
+}
+.footer .infintie_slider h1:nth-child(2){
+    animation-delay: 3.2s;
+}
+.footer .infintie_slider h1:nth-child(3){
+    animation-delay: 5.2s;
+}
+.footer .infintie_slider h1:nth-child(4){
+    animation-delay: 7.2s;
+}
+.footer .infintie_slider h1:nth-child(5){
+    animation-delay: 9.2s;
 }
 @keyframes infinite_scroll{
     from{
         left: 100%;
     }
     to{
-        left: calc(var(--width)*-1);
-    }
-}
-@starting-style{
-    .footer .infintie_slider h1{
         left: calc(var(--width)*-1);
     }
 }
