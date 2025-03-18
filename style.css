@@ -19,6 +19,48 @@ html, body{
 }
 body{
     position: relative;
+    background: #000000;
+}
+.container{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+.container .splash{
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1000;
+}
+.container .splash .box{
+    width: 25%;
+    background-color: #ff6600;
+}
+.container .splash .box:nth-child(1){
+    animation: drop 1s 2s linear forwards;
+}
+.container .splash .box:nth-child(2){
+    animation: drop 1s 2s linear forwards;
+}
+.container .splash .box:nth-child(3){
+    animation: drop 1s 2s linear forwards;
+}
+.container .splash .box:nth-child(4){
+    animation: drop 1s 2s linear forwards;
+}
+@keyframes drop {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-100vh);
+        z-index: -1;
+    }
 }
 .anchors{
     position: absolute;
@@ -38,7 +80,7 @@ body{
     height: 100vh;
 }
 .anchors #skills{
-    height: 100vh;
+    height: 170vh;
 }
 .anchors #contact{
     height: 100vh;
@@ -492,7 +534,7 @@ body{
 .content_container .content .card:nth-child(1) .right_span span:nth-child(3)::after,
 .content_container .content .card:nth-child(1) .right_span span:nth-child(4)::after{
     position: absolute;
-    background-color: red;
+    background-color: transparent;
     visibility: hidden;
     opacity: 0;
     content: '';
@@ -503,26 +545,26 @@ body{
     height: 100%;
     transition: 0.5s ease-in-out;
 }
-.content_container .content .card:nth-child(1) .right_span span:nth-child(1){
-    background-image: url();
+.content_container .content .card:nth-child(1) .right_span span:nth-child(1)::after{
+    background-image: url(img/splashimg1.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
-.content_container .content .card:nth-child(1) .right_span span:nth-child(2){
-    background-image: url();
+.content_container .content .card:nth-child(1) .right_span span:nth-child(2)::after{
+    background-image: url(img/splashimg2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
-.content_container .content .card:nth-child(1) .right_span span:nth-child(3){
-    background-image: url();
+.content_container .content .card:nth-child(1) .right_span span:nth-child(3)::after{
+    background-image: url(img/splashimg3.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
-.content_container .content .card:nth-child(1) .right_span span:nth-child(4){
-    background-image: url();
+.content_container .content .card:nth-child(1) .right_span span:nth-child(4)::after{
+    background-image: url(img/splashimg4.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -682,13 +724,13 @@ body{
 }
 .footer{
     overflow-x: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    row-gap: 50px;
+    grid-template-rows: auto 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     width: 100vw;
-    height: 40vh;
-    padding: 0;
-    margin: 0;
+    height: 100vh;
+    padding: 0px 0px 100px 0px;
     background-color: #000000;
 }
 .footer::before{
@@ -710,6 +752,7 @@ body{
 .footer .infintie_slider{
     overflow: hidden;
     position: relative;
+    grid-column: span 2;
     display: flex;
     width: 100%;
     height: 10vh;
@@ -742,6 +785,104 @@ body{
     to{
         left: calc(var(--width)*-1);
     }
+}
+.footer .contact_form{
+    padding: 100px 100px 100px 300px;
+    position: relative;
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-row: span 3;
+    justify-self: center;
+    gap: 2rem;
+}
+.footer .contact_form input{
+    height: 4rem;
+    font-size: 2rem;
+    background-color: transparent;
+    color: #ff6600;
+    border-style: none;
+    border-bottom: 1px #ff6600 solid;
+}
+.footer .contact_form h1{
+    color: #ff6600;
+    text-align: end;
+    font-family: inter;
+    font-weight: 200;
+    font-size: 2rem;
+}
+.footer .contact_form button{
+    grid-column: -2/-1;
+    width: 50%;
+    justify-self: end;
+    border-radius: 50px;
+    font-size: 2rem;
+    color: #ff6600;
+    background-color: #000000;
+    border-style: none;
+    cursor: pointer;
+    border: 1px solid #ff6600;
+    transition: all 0.3s ease-in-out;
+}
+.footer .contact_form button:hover{
+    background-color: #ff6600;
+    color: #000000;
+}
+.footer .contact_details{
+    margin: 0px 250px 10px 100px;
+    height: 100%;
+    background-color: #ff66003d;
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ff6600;
+}
+.footer .contact_details ul{
+    font-family: inter;
+    font-size: 1.2rem;
+    color: #ff6600;
+    margin: 0;
+    padding: 1rem;
+}
+.footer .links{
+    overflow: hidden;
+    margin: 0px 250px 10px 100px;
+    background-color: #ff66003d;
+    border: 1px solid #ff6600;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+    gap: 1rem;
+    place-items: center;
+}
+.footer .links img{
+    width: 40%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    justify-self: center;
+}
+.footer .address{
+    margin: 0px 250px 10px 100px;
+    height: 100%;
+    background-color: #ff66003d;
+    border: 1px solid #ff6600;
+}
+.footer .address h1{
+    font-family: inter;
+    font-size: 2rem;
+    margin: 0;
+    padding: 1rem;
+    color: #ff6600;
+}
+.footer .address ul{
+    font-family: inter;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 1rem;
+    color: #ff6600;
 }
 
 
